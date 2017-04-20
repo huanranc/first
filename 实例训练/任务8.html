@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+   <title>点击Div显示innerHTML</title>
+  <style>
+    *{
+     margin:0
+      padding:0
+	}
+	div{
+	border:2px solid #eee;
+	 width:40%;
+	 margin:10px auto;
+	}
+  </style>
+  <script>
+	window.onload=function(){
+		var div=document.getElementsByTagName("div");
+		for(var i=0;i<div.length;i++){
+		div[i].onclick=function(){
+			alert(this.innerHTML);//取在当前div的innerHTML
+		  }
+		}
+	}
+  </script>
+ </head>
+ <body>
+   <div><strong>新华网</strong>北京5月29日电(新华社记者)从三聚氰胺到瘦肉精，从染色馒头到毒豆芽，在食品中添加非食用物质和滥用食品添加剂已成为百姓餐桌上突出的"不安全因素"。近期以来，从北京到广东，从浙江到宁夏，一场打击食品非法添加的"风暴"席卷全国。</div>
+   <div><strong>新华网</strong>北京5月29日电(新华社记者)从三聚氰胺到瘦肉精，从染色馒头到毒豆芽，在食品中添加非食用物质和滥用食品添加剂已成为百姓餐桌上突出的"不安全因素"。近期以来，从北京到广东，从浙江到宁夏，一场打击食品非法添加的"风暴"席卷全国。</div>
+   <div><strong>新华网</strong>北京5月29日电(新华社记者)从三聚氰胺到瘦肉精，从染色馒头到毒豆芽，在食品中添加非食用物质和滥用食品添加剂已成为百姓餐桌上突出的"不安全因素"。近期以来，从北京到广东，从浙江到宁夏，一场打击食品非法添加的"风暴"席卷全国。</div>
+ </body>
+</html>

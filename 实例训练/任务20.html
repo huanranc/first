@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>全选/反选</title>
+  <style>
+  *{
+  margin:0px;
+  padding:0px;
+  }
+  body{
+  font-size:12px;
+  }
+  #wrap{
+  width:120px;
+  padding:10px 5px;
+  margin:10px auto;
+  border:1px solid black;
+  border-radius:5px;
+  }
+  #wrap p{
+  padding:5px;
+  }
+  span{
+  color:blue;
+  }
+  </style>
+  <script>
+  window.onload=function(){
+	var change=document.getElementsByTagName("input");
+	var lab=document.getElementsByTagName("label")[0];
+	change[0].onclick=function(){
+	for(var i=1;i<change.length;i++){
+			change[i].checked=this.checked;
+	 }
+	 if(change[0].checked=this.checked){
+		 lab.innerHTML="全不选";
+	 }else{
+		 lab.innerHTML="全选";
+	 }
+		
+	 }
+	 var ospan=document.getElementsByTagName("span")[0];
+	   ospan.onclick=function(){
+		for(var i=1;i<change.length;i++){
+			change[i].checked=!change[i].checked;
+			
+	 }
+	 if(change[0].checked=this.checked){
+		 lab.innerHTML="全不选";
+	 }
+	 else{
+		 lab.innerHTML="全选";
+	 }
+	   }
+
+	}
+
+  </script>
+ </head>
+ <body>
+  <div id="wrap">
+  <form>
+	<p><input type="checkbox" /><b><label>全选</label></b>&nbsp;&nbsp;<span>反选</span></p><hr>
+	<p><input type="checkbox" /><label>选项（一）</label></p>
+	<p><input type="checkbox" /><label>选项（二）</label></p>
+	<p><input type="checkbox" /><label>选项（三）</label></p>
+	<p><input type="checkbox" /><label>选项（四）</label></p>
+	<p><input type="checkbox" /><label>选项（五）</label></p>
+	<p><input type="checkbox" /><label>选项（六）</label></p>
+	<p><input type="checkbox" /><label>选项（七）</label></p>
+	<p><input type="checkbox" /><label>选项（八）</label></p>
+	<p><input type="checkbox" /><label>选项（九）</label></p>
+	<p><input type="checkbox" /><label>选项（十）</label></p>
+  </form>
+  </div>
+ </body>
+</html>

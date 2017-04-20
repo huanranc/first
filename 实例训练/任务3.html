@@ -1,0 +1,45 @@
+<!doctype html>
+ <head>
+  <meta charset="UTF-8">
+  <title>传参</title>
+  <style>
+  *{
+  margin:0;
+  padding:0;
+  }
+  #main{
+  width:100%;
+  text-align:center;
+  margin:10px;
+  }
+  </style>
+  <script>
+    var text=function(a,b){
+      alert(a);
+	  alert(b);
+	};
+     window.onload=function(){
+       var m=document.getElementById("main");
+	   var n=m.getElementsByTagName("input");
+	 //  var button=m.getElementsByTagName("button")[0];
+	 /*  button.onclick=function(){
+          text(n[0].value,n[1].value);
+	   }
+	   */
+	  n[2].onclick=function(){
+		  text(n[0].value,n[1].value);
+	  }
+	 };
+  </script>
+ </head>
+ <body>
+  <div id="main">
+     <input type="text" value="福州市"/>
+	 <br/><br/>
+     <input type="text" value="鼓楼区"/>
+	 <br/><br/>
+	<!--<button>传参</button>-->
+     <input type="button" value="提交"/>
+  <div>
+ </body>
+</html>

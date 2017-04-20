@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>鼠标经过，头像旋转并且高亮</title>
+    <style type="text/css">
+    *{
+    margin 0;
+    padding:0;
+    font-size:18px;
+    font-family:'Arial';
+    }
+    ul{list-style:none;}
+    body{
+    cursor: pointer ;
+    background-color:#000000;
+    }
+    a{   
+    text-decoration:none;
+    }
+    a img{
+    width: 74px;
+    height: 74px; 
+    border: 0.5px solid #FFFFFF;
+    border-radius: 50%;
+    overflow: hidden;
+    }
+    a:hover img{
+    transform:rotate(360deg);
+    transition-duration:0.5s;
+    }
+
+    li{
+    margin:12px;
+    -webkit-filter: contrast(20%); /* Chrome, Safari, Opera */
+    filter: contrast(20%);
+    }
+    li:hover{
+    transform:translateX(10px);
+    -webkit-filter: contrast(100%); /* Chrome, Safari, Opera */
+    filter: contrast(100%);
+    transition-duration: 0.5s;
+    }
+    span{
+    position:absolute;
+    margin-top:24px;
+    margin-left:10px;
+    color:#FFFFFF;
+    }
+    </style>
+  </head>
+
+  <body >
+  <ul>
+    <li><a href="#"><img src="http://att.bbs.duowan.com/forum/201412/19/0749527x5x4u501t5yvi4y.jpg" width="88" height="80" /><span>SailorMoon</span></a></li>
+    <li><a href="#"><img src="http://img5q.duitang.com/uploads/item/201506/06/20150606142021_TwMtC.thumb.700_0.jpeg" width="88"height="80"/><span>beautiful&nbsp;girl</span></a></li>
+    <li><a href="#"><img src="http://i03.pic.sogou.com/42edc341416b5974" width="88" height="80" /><span>handsome&nbsp;boy</span></a></li>
+  </ul>
+  </body>
+</html>

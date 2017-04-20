@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <title>累计按钮，自动加一</title>
+ </head>
+ <style>
+	body{
+	text-align:center;
+	}
+ </style>
+ <script>
+ window.onload=function(){
+	 var i=0;
+	var Obutton=document.getElementsByTagName("button")[0];
+	Obutton.onclick=function(){
+		Obutton.innerHTML=++i;
+		alert(i);
+	}
+ }
+ </script>
+ <body>
+	<button>0</button>
+ </body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>用循环将三个DIV变成红色</title>
+  <style>
+     #main{
+	 width:330px;
+	 height:100px;
+	 margin:10px auto;
+	 }
+	 #main div{
+	 float:left;
+	 width:100px;
+	 height:100px;
+	 margin:5px;
+	 background:black;
+	 }
+  </style>
+  <script>
+     window.onload=function(){
+		 var btn=document.getElementsByTagName("button")[0];
+		 var main=document.getElementById("main");
+		 var odiv=main.getElementsByTagName("div");
+		 btn.onclick=function(){
+			 for(var i=0;i<odiv.length;i++){
+				 odiv[i].style.background="red";
+			 }
+		 }
+	 }
+  </script>
+ </head>
+ <body>
+   <center><button>点击将DIV变成红色</button></center>
+   <div id="main">
+     <div></div>
+	 <div></div>
+	 <div></div>
+   </div>
+ </body>
+</html>

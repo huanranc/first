@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>鼠标移入/移出改变样式</title>
+		<style>
+		  body{
+		  font-size:12px;
+		  color:#fff;
+		  }
+		  .main{
+		  width:200px;
+		  height:200px;
+		  margin:10px auto;
+		  background:black;
+		  }
+		  .change{
+		  width:200px;
+		  height:200px;
+		  color:red;
+		  margin:10px auto;
+		  border:15px solid red; 
+		  background:#eee;
+		  }
+		</style>
+		<script>
+		  window.onload=function(){
+			  var oMain=document.getElementsByTagName("div")[0];
+			  oMain.onmouseover=function(){
+                   var oMain=document.getElementsByTagName("div")[0];
+				  oMain.className="change";
+
+			  }
+
+			   oMain.onmouseout=function(){
+
+				  oMain.className="main";
+
+			  }
+
+		  }
+		</script>
+    </head>
+	<body>
+	  <div class="main">
+	    鼠标移入/移出改变样式
+	  </div>
+	</body>
+</html>

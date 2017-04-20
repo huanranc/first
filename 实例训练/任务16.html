@@ -1,0 +1,76 @@
+<!doctype html>
+ <head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="D:/fontawesome-4.2.0_ie7/4.2.0/css/font-awesome.min.css">
+  <title>单一按钮显示或隐藏</title>
+  <style>
+  *{
+  margin:0px;
+  padding:0px;
+  }
+	#wrap{
+	width:300px;
+	margin:10px auto;
+	}
+	h2{
+	width:200px;
+	height:35px;
+	border:1px solid black;
+	margin:0px auto;
+	color:black;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:400;
+    border:1px solid;
+    line-height:35px;
+    background:#ced3d7;
+	}
+	span{
+	float:right;
+	font-size:25px;
+	}
+	ul{
+	width:200px;
+	margin:0px auto;
+	border:1px solid black;
+	border-top:none;
+	}
+	li{
+	list-style-type:none;
+	background:#ced3d7;
+	}
+	a{
+	color:black;
+	display:block;
+	}
+	a:hover{background:#fff;text-decoration:underline;}
+  </style>
+  <script>
+ window.onload=function(){
+
+	var show=document.getElementsByTagName("ul")[0];
+	var Di=document.getElementsByTagName("i")[0];
+	Di.onclick=function(){
+
+		show.style.display=show.style.display=="none"?"block":"none";/*条件 ? 结果1 : 结果2;. 这里你把条件写在问号(?)的前面后面跟着用冒号(:)分隔的结果1和结果2。满足条件时结果1否则结果2。*/
+		Di.className=Di.className=="fa fa-arrow-down"?"fa fa-arrow-up":"fa fa-arrow-down";
+
+	}
+
+ }
+  </script>
+ </head>
+ <body>
+  <div id="wrap">
+	<h2>播放列表<span><i class="fa fa-arrow-down"></i></span></h2>
+	<ul>
+        <li><a href="javascript:;">玩家之徒 - 蔡依林</a></li>
+        <li><a href="javascript:;">原谅我就是这样的女生 - 戴佩妮</a></li>
+        <li><a href="javascript:;">猜不透 - 丁当</a></li>
+        <li><a href="javascript:;">自导自演 - 周杰伦</a></li>
+        <li><a href="javascript:;">浪漫窝 - 弦子</a></li>
+        <li><a href="javascript:;">流年 - 王菲</a></li>
+    </ul>
+  </div>
+ </body>
+</html>

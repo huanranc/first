@@ -1,0 +1,56 @@
+<!doctype html>
+ <head>
+  <meta charset="UTF-8">
+  <title>控制Div</title>
+  <style type="text/css">
+    *{
+    margin:0px;
+	padding:0px;
+	}
+	#main{
+	width:600px;
+	margin:0 auto;
+	text-align:center;
+	}
+    #squart{
+	width:100px;
+	height:100px;
+	background:red;
+	margin:10px auto;
+	display:block;
+	}
+  </style>
+
+  <script type="text/javascript">
+   var change = function (elem,attar,value){
+          elem.style[attar]=value;
+	};
+     window.onload=function(){
+      var a=document.getElementsByTagName("input");
+	  var b=document.getElementById("squart");
+	  var m=["width","height","background","display","display"];
+	  var n=["200px","200px","black","none","block"];
+
+      for(var i=0;i<a.length;i++){
+		  a[i].index=i;
+		  a[i].onclick=function(){
+		      this.index==a.length-1&&(b.style.cssText="");/*???this代表当前的btn，当this.index等于4时，
+			  后面的oDiv.style.cssText = ""这句会执行*/
+              change(b,m[this.index],n[this.index]);
+		  }
+	  }
+	 };
+  </script>
+
+ </head>
+ <body>
+  <div id="main">
+    <input type="button"  value="变宽"/>
+	<input type="button"  value="变高"/>
+	<input type="button"  value="变色"/>
+	<input type="button"  value="隐藏"/>
+	<input type="button"  value="重置"/>
+     <div id="squart"></div>
+   </div>
+ </body>
+</html>

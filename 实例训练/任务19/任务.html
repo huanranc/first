@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>鼠标经过，改变图片路径</title>
+  <style>
+  *{
+  margin:0px;
+  padding:0px;
+  }
+  body{
+  background:#000;
+  }
+  #wrap{
+  width:212px;
+  height:282px;
+  margin:10px  auto;
+  background:#fff;
+  border-radius:7px;
+  border:5px solid #fff;
+  }
+  li{
+  list-style-type:none;
+  margin:3px 3px 0px 0px;
+  float:left;
+  }
+  li.first{
+  position:relative;
+  }
+  #wrap li.first,#wrap li.first img{
+  width:156px;height:162px;
+  }
+  </style>
+  <script>
+  window.onload=function(){
+  var imgs=document.getElementsByTagName("img");
+  for(var i=1;i<imgs.length;i++){
+	
+     imgs[i].onmouseover=function(){
+		 imgs[0].src=this.src.replace(/small/,"big");
+	 }
+  }
+
+  }
+  </script>
+ </head>
+ <body>
+  <ul id="wrap">
+   <li class="first"><img src="big_1.jpg"/></li>
+   <li ><img src="small_1.jpg"/></li>
+   <li ><img src="small_2.jpg"/></li>
+   <li ><img src="small_3.jpg"/></li>
+   <li ><img src="small_4.jpg"/></li>
+   <li ><img src="small_5.jpg"/></li>
+   <li ><img src="small_6.jpg"/></li>
+   <li ><img src="small_7.jpg"/></li>
+   <li ><img src="small_8.jpg"/></li>
+   <li ><img src="small_9.jpg"/></li>
+   <li ><img src="small_10.jpg"/></li>
+   <li ><img src="small_11.jpg"/></li>
+  </ul>
+ </body>
+</html>

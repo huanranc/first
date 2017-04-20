@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>比较两数的大小</title>
+ </head>
+ <style>
+	body{
+	text-align:center;
+	}
+	input{
+	width:50px;
+	margin:10px;
+	}
+ </style>
+ <script>
+ window.onload=function(){
+	var aInput=document.getElementsByTagName("input");
+	var aButton=document.getElementsByTagName("button")[0];
+	var aSpan=document.getElementsByTagName("span")[0];
+	for(var i=0;i<=aInput.length-1;i++){
+			aInput[i].onkeyup=function(){
+				this.value=this.value.replace(/[^\d]/,"");
+			}
+	}
+	aButton.onclick=function(){
+		if(aInput[0].value==""||aInput[1]==""){
+			alert("不能为空");
+		}else{
+		aSpan.innerHTML=parseInt(aInput[0].value)>parseInt(parseInt(aInput[1].value))?
+		parseInt(aInput[0].value):parseInt(parseInt(aInput[1].value));
+		}
+	}
+ }
+ </script>
+ <body>
+  <input type="text" /><strong>vs</strong><input type="text" /><button>最大的数是>></button><span style="color:red">?</span>
+ </body>
+</html>

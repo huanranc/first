@@ -1,0 +1,54 @@
+<!doctype html>
+ <head>
+  <meta charset="UTF-8">
+  <title>求出数组中所有数组的和</title>
+  <style>
+   *{
+   margin:0px;
+   padding:0px;
+   }
+   #wrap{
+   width:500px;
+   margin:20px auto;
+   }
+   span{
+   color:#778899;
+   font-size:12px;
+   }
+   #btn{
+   margin-top:10px;
+   }
+   #result{
+   color:red;
+   font-weight:3px;
+   }
+  </style>
+  <script>
+  window.onload=function(){
+     var txt=document.getElementById("array");
+	 var btn=document.getElementById("btn");
+	 var r=document.getElementById("result");
+	txt.onkeyup=function(){
+    this.value=this.value.replace(/[^(\d)|(,)]/,'');
+	}
+	btn.onclick=function(){
+		var sum=0;
+		var input=txt.value.split(",");
+		for(var i=0;i<input.length;i++){
+			sum=parseInt(input[i])+sum;
+		}
+		r.innerHTML=sum;
+	}
+  }
+  </script>
+ </head>
+ <body>
+ <div id="wrap">
+  <input id="array" type="text"/>
+  <span>输入数字求和，数字之间用半角","号分隔</span>
+  <br/>
+  <p id="result"></p>
+  <input type="submit" id="btn"/>
+ </div>
+ </body>
+</html>

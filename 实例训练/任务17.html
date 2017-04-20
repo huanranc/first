@@ -1,0 +1,84 @@
+<!doctype html>
+ <head>
+  <meta charset="UTF-8">
+  <title>提示框效果</title>
+   <style>
+  *{
+  margin:0px;
+  padding:0px;
+  }
+  #wrap{
+  width:370px;
+  height:290px;
+  margin:10px auto;
+  padding:10px;
+  border:1px solid black;
+  }
+  ul{
+  list-style-type:none;
+  }
+  li{
+  display:block;
+  float:left;
+  margin:10px;
+  border:1px solid black;
+  width:100px;
+  height:100px;
+  text-align:center;
+  position:relative;
+  }
+  ul li img{
+  width:130px;
+  height:130px;
+  position:absolute;
+  margin-left:-14px;
+  margin-top:-20px;
+  display:none;
+  }
+  .zindex{z-index:1;}
+  </style>
+  <script> 
+
+  window.onload=function(){
+	var oli = document.getElementsByTagName("li");
+	var oimg=document.getElementsByTagName("img");
+	for(var i=0;i<oli.length;i++){
+	 oli[i].index=oimg[i].index=i;
+	 oli[i].onmouseover=function(){
+	 oli[this.index].className="zindex";
+	 oimg[this.index].style.display="block";
+	}
+	oli[i].onmouseout=function(){
+		oli[this.index].className="";
+	 oimg[this.index].style.display="none";
+	}
+  }
+  }
+  </script>
+ </head>
+ <body>
+  <div id="wrap">
+  鼠标移过，显示图片
+	<ul id="main">
+    <li>小赤
+	<img src="images/1.jpeg"  />
+	</li>
+	<li>小紫
+	<img src="images/2.jpeg"  />
+	</li>
+	<li>小绿
+	<img src="images/3.jpeg"  />
+	</li>
+	<li>小蓝
+	<img src="images/4.jpeg"  />
+	</li>
+	<li>小黑
+	<img src="images/5.jpeg"  />
+	</li>
+	<li>小黄
+	<img src="images/6.jpeg"  />
+	</li>
+    </ul>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>网页计算器</title>
+  <style>
+  *{
+	margin:0px;
+	padding:0px;
+	}
+    #wrap{
+	position:relative;
+	margin:10px auto;
+	width:300px;
+	}
+	p{
+	background:black;
+	color:#fff;
+	text-align:right;
+	}
+	#text{
+	width:290px;
+	height:84px;
+	border:none;
+	background:#DCE0C5;
+	padding:0 5px;
+	}
+	ul{
+		background: #1A1A1A;
+		overflow: hidden;
+	}
+	li{
+		list-style-type: none;
+		float: left;
+		padding: 10px;
+		margin: 5px;
+		width: 42px;
+		border-radius: 10%;
+		border: 1px solid black;
+		background-color: #030303;
+
+	}
+	.btn-2{
+		position: absolute;
+		top:279px;
+		right: 4px;
+		height:83px;
+	}
+	ul a{
+		text-decoration: none;
+		display:block;
+		font-size: 20px;
+		text-align: center;
+		color: #fff;
+	}
+  </style>
+  <script type="text/javascript">
+  	window.onload=function(){
+  		var number = document.getElementsByTagName("a");
+  		var atext = document.getElementById("text")[0];
+  		for (var i = 0; i < number.length; i++) {
+  			number[i].onclick=function(){
+  				atext.value=number[i].innerHTML;
+  				
+  			}
+  		}
+  	}
+  </script>
+ </head>
+ <body>
+	<div id="wrap">
+		<p>by huanran</p>
+		<input type="text" id="text" value="0"/>
+		<ul>
+			<li class="btn-1"><a href="javascript:void(0)">c</a></li>
+        	<li class="btn-1"><a href="javascript:void(0)">%</a></li>
+        	<li class="btn-1"><a href="javascript:void(0)">÷</a></li>
+        	<li class="btn-1"><a href="javascript:void(0)">×</a></li>
+        	<li><a href="javascript:void(0)">7</a></li>
+        	<li><a href="javascript:void(0)">8</a></li>
+        	<li><a href="javascript:void(0)">9</a></li>
+        	<li class="btn-1"><a href="javascript:void(0)">-</a></li>
+        	<li><a href="javascript:void(0)">4</a></li>
+        	<li><a href="javascript:void(0)">5</a></li>
+        	<li><a href="javascript:void(0)">6</a></li>
+        	<li class="btn-1"><a href="javascript:void(0)">+</a></li>
+        	<li><a href="javascript:void(0)">1</a></li>
+        	<li><a href="javascript:void(0)">2</a></li>
+        	<li><a href="javascript:void(0)">3</a></li>
+        	<li class="btn-2"  ><a href="javascript:void(0)">=</a></li>
+        	<li class="btn-3" style="width:118px"><a href="javascript:void(0)">0</a></li>
+        	<li><a href="javascript:void(0)">.</a></li>
+		</ul>
+	</div>
+ </body>
+</html>

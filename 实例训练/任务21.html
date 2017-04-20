@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>求和</title>
+  <style>
+	*{
+	margin:0px;
+	padding:0px;
+	}
+	body{
+	text-align:center;
+	padding:10px;
+	}
+	.fa-txt{
+	width:60px;
+	}
+  </style>
+  <script>
+  window.onload=function(){
+	var aInput=document.getElementsByTagName("input");
+	var aSpan=document.getElementsByTagName("span")[0];
+	var aButton=document.getElementsByTagName("button")[0];
+		for(var i=0;i<aInput.length;i++){
+			aInput[i].onkeyup=function(){
+				this.value=this.value.replace(/[^\d]/,"");
+			}
+	}
+	aButton.onclick=function(){
+		(aInput[0].value==""||aInput[1].value=="")?
+		alert("输入不能为空！"):
+		aSpan.innerHTML=parseInt(aInput[0].value)+parseInt(aInput[1].value);
+	}
+  }
+  </script>
+ </head>
+ <body>
+ <input type="text" class="fa-txt"/><strong>+</strong><input type="text" class="fa-txt"/><strong>=</strong><span>?</span><button>求和</button>
+ </body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>百度输入法</title>
+  <style>
+  *{
+  margin:0px;
+  padding:0px;
+  cursor: pointer ;
+  }
+  #main{
+  width:30%;
+  margin:10px auto;
+  }
+  ul{
+  list-style-type:none;
+  border:1px solid blue;
+  color:blue;
+  margin-top:5px;
+  width:42px;
+  height:55px;
+  }
+  #main li{
+  width:100%;
+  display:block;
+  
+  }
+  #close{
+  border-top:1px solid blue;
+  }
+  .hide{
+  display:none;
+  }
+  .show{
+  display:block;
+  }
+  a{
+  text-decoration:none;
+  color:#00c;
+  background:#fff;
+  padding:0 5px;
+  }
+  a:hover{
+  background:#d9e1f6;
+  }
+  </style>
+  <script>
+  window.onload=function(){
+	  var btn=document.getElementById("button");
+
+	  btn.onclick=function(){
+		  var table=document.getElementsByTagName("ul")[0];
+		  table.className="show";
+           var close=document.getElementById("close");
+		   close.onclick=function(){
+		   var table=document.getElementsByTagName("ul")[0];
+		  table.className="hide";
+		   }
+	  }
+ /*    var table=document.getElementsByTagName("ul")[0];
+	 table.onmouseover=function(){
+		 
+		 var oli=document.getElementsByTagName("li");
+		 oli[2].style.background="#d9e1f6";
+	
+
+	 }
+*/
+  }
+  </script>
+ </head>
+ <body>
+  <div id="main">
+    <input id="button" type="button" value="输入法"/>
+	<ul class="hide">
+	  <li><a href="javascript:;">手写</a></li>
+	  <li><a href="javascript:;">拼音</a></li>
+	  <li id="close"><a href="javascript:;">关闭</a></li>
+	</ul>
+  </div>
+ </body>
+</html>

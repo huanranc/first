@@ -1,0 +1,93 @@
+<!doctype html>
+ <head>
+  <meta charset="UTF-8">
+  <title>图像列表</title>
+  <style>
+  *{
+  margin:0px;
+  padding:0px;
+  }
+  #wrap{
+  width:460px;
+  height:310px;
+  margin:10px auto;
+  padding:10px;
+  border:1px solid black;
+  }
+  ul{
+  list-style-type:none;
+  }
+  li{
+  display:block;
+  float:left;
+  padding:10px;
+  }
+  #main img{
+  width:131px;
+  height:131px;
+  border:1px solid #BEBEBE;
+  opacity:0.3;
+  filter:alpha(opacity=30);//IE浏览器*/
+  }
+  #main li.current img{
+  opacity:1;
+  filter:alpha(opacity=100);
+  }
+
+  </style>
+  <script>
+  window.onload=function(){
+	var oDli=document.getElementsByTagName("li");
+	for(var i=0;i<oDli.length;i++){
+		oDli[i].onmouseover=function(){
+			this.className="current";
+		}
+
+		oDli[i].onmouseout=function(){
+			this.className="";
+		}
+	}
+  } 
+/*有问题，for循环会一起遍历
+window.onload=function(){
+	var oDli=document.getElementsByTagName("li");
+	for(var i=0;i<oDli.length;i++){
+		var oDli=document.getElementsByTagName("li");
+		oDli[i].onmouseover=function(){
+			change(30);
+		}
+
+		oDli[i].onmouseout=function(){
+			change(100);
+		}
+	}
+	var timer=null;
+	function change(s){
+      var oDli=document.getElementsByTagName("li");
+	  clearInterval(timer);
+	  timer=setInterval(function(){
+           var oDli=document.getElementsByTagName("li");
+		for(var i=0;i<oDli.length;i++){
+		oDli[i].style.opacity=s/100;
+	  }
+		 
+	  },30)
+
+	}
+  } 
+  */
+  </script>
+ </head>
+ <body>
+  <div id="wrap">
+	<ul id="main">
+    <li><a href="images/11.jpeg"><img src="images/1.jpeg"  /></a></li>
+	<li><a href="images/12.jpeg"><img src="images/2.jpeg" /></a></li>
+	<li><a href="images/13.jpeg"><img src="images/3.jpeg" /></a></li>
+	<li><a href="images/14.jpeg"><img src="images/4.jpeg" /></a></li>
+	<li><a href="images/15.jpeg"><img src="images/5.jpeg" /></a></li>
+	<li><a href="images/16.jpeg"><img src="images/6.jpeg" /></a></li>
+    </ul>
+  </div>
+ </body>
+</html>

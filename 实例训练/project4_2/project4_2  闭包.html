@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动播放--幻灯片效果///闭包</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		body{
+			background: #000000;
+		}
+		#conntent{
+			position: relative;
+			width: 492px;
+			height: 172px;
+			margin: 50px auto;
+			background: #fff;
+			border:8px solid #fff;
+			border-radius: 5px;	
+		}
+		#images{
+			position: relative;
+			top:0px;
+			left: 0px;
+			width: 490px;
+			height: 170px;
+			border: 1px solid #CCCCCC;
+			overflow:hidden;
+		}
+		#images li{
+			position: absolute;
+			width: 490px;
+			height: 170px;
+			top: 0px;
+			left: 0px;
+			filter:alpha(opacity=0);
+			opacity: 0;
+		}
+		#images>.show{
+			/*兼容IE8以下*/
+			filter:alpha(opacity=100);
+			opacity: 1;
+		}
+		li{
+			list-style-type: none;
+			display: inline-block;	
+		}
+		#count{
+			position: absolute;
+			bottom: 0px;
+			right: 10px;
+		}
+		#count>.show_text{
+			background: #FF6600;
+		}
+		#count li{
+			color: #fff;
+			background: #FDB449;
+			font-size: 12px;
+			width: 18px;
+			height: 18px;
+			border-radius: 50px;
+			overflow: hidden;
+			text-align: center;
+		}
+		
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var conntent=document.getElementById("conntent");
+			var images=document.getElementById("images");
+			var show=document.getElementsByName("show");
+			var images_li=images.getElementsByTagName("li");
+			var count=document.getElementById("count");
+			var count_li=count.getElementsByTagName("li");
+			var timer=null;
+			var i=index=0;
+
+			/*conntent.onmouseout=function(){
+				play();
+			}
+			conntent.onmouseover=function(){
+				clearInterval(timer);
+			}
+			function play(){
+				timer=setInterval(function(){
+				index++;
+				//index >= images_li.length && (index = 0);
+			   if (index >= images_li.length && (index = 0)) {index =1;}
+				allShow(index);
+					},2000);
+			}
+			play();*/
+				for (var i = 0; i < count_li.length; i++) {
+				 /*count_li[i].onmouseover=(function(i){
+				 	count_li[i].index=i;
+					return function(){
+					count_li[i].className="";
+					count_li[this.index].className="show_text";
+					}
+				})(i);
+			}*/
+			count_li[i].index=i;
+			count_li[i].onmouseover = function(){
+				allShow(this.index);
+			}
+          }
+
+          function allShow(a){
+          	index=a;
+          	for (var i = 0; i < count_li.length; i++)
+			count_li[i].className="";
+			count_li[this.index].className="show_text";
+
+			for (var i = 0; i < images_li.length; i++) {
+			images_li[i].className="";
+          	images_li[this.index].className="show";
+          }
+		
+          }
+
+         
+		
+	}
+		
+	</script>
+</head>
+<body>
+	<div id="conntent">
+		<ul id="images">
+			<li class="show"><img src="01.jpg" alt="图1"></li>
+			<li><img src="02.jpg" alt="图2"></li>
+			<li><img src="03.jpg" alt="图3"></li>
+			<li><img src="04.jpg" alt="图4"></li>
+			<li><img src="05.jpg" alt="图5"></li>
+		</ul>
+		<ul id = "count">
+			<li class="show_text">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+</body>
+</html>
