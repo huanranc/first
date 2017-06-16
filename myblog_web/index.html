@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Life</title>
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="js/echarts.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="social_avatar">
+                <img src="images\social.jpg" alt="social">
+            </div>
+            <div class="decoration_line"></div>
+            <div class="nav">
+                <ul>
+                    <li class="active"><a href="index.html">About Me</a></li>
+                    <li><a href="MyBlog.html">My Blog</a></li>
+                    <li><a href="LivingCircle.html">Living Circle</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="main">
+                <h3 class="page_header">About Me</h3>
+            </div>
+            <div id="rangle"></div>
+            <div class="tableText">
+                <div class="visualizeData">
+                    <div id="lineBox">
+                    <div id="lineChart" style="width: 800px;height:400px;">
+                        <!-- <svg width="100%" height="100%"></svg>-->
+                        <!--        <script src="https://d3js.org/d3.v4.min.js"></script>-->
+                    </div>
+                    <script type="text/javascript">
+                        // 基于准备好的dom，初始化echarts实例
+                        var myChart = echarts.init(document.getElementById('lineChart'));
+
+                        // 指定图表的配置项和数据
+                        var option = {
+                            title: {
+                                text: '每日访问网站的时间'
+                            },
+                            tooltip: {},
+                            legend: {
+                                data: ['每日访问网站']
+                            },
+
+                            xAxis: {
+                                data: ["B站", "gitHub", "百度", "google", "知乎"],
+                                splitLine: {
+                                    lineStyle: {
+                                        type: 'dashed',
+                                    }
+                                },
+                                axisTick: {
+                                    show: false
+                                },
+                                axisLine: {
+                                    show: false
+                                },
+
+                            },
+                            yAxis: {
+                                splitLine: {
+                                    lineStyle: {
+                                        type: 'dashed'
+                                    }
+                                },
+                                axisTick: {
+                                    show: false
+                                },
+                                axisLine: {
+                                    show: false
+                                },
+
+
+                            },
+                            series: [{
+                                name: '每日访问网站',
+                                type: 'line',
+                                color: '#000',
+                                data: [120, 60, 120, 180, 120],
+                                symbolSize: 10,
+                                itemStyle: {
+                                    normal: {
+                                        color: "#4dbac0",//图标颜色
+
+                                    }
+                                },
+                                lineStyle: {
+                                    normal: {
+                                        width: 4,
+                                        color: '#4dbac0'
+                                    }
+                                },
+                                areaStyle: {
+                                    normal: {
+                                        color: '#e6f5fe',
+                                        opacity: 0.5
+
+
+                                    }
+                                },
+                            }],
+                            textStyle: {
+                                color: '#8a95a5',
+
+                            },
+
+
+                        };
+
+                        // 使用刚指定的配置项和数据显示图表。
+                        myChart.setOption(option);
+                    </script>
+                    <div id="linePieChart"></div>
+                    <script>
+                             var myChart = echarts.init(document.getElementById('linePieChart'));
+                             option = {
+   
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'right',
+        data:['B站','gitHub','baidu','google','知乎']
+    },
+    series: [
+        {
+            name:'访问来源',
+            type:'pie',
+            radius: ['40%', '60%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '20',
+                        fontWeight: 'bold'
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data:[
+                {value:120, name:'B站'},
+                {value:60, name:'gitHub'},
+                {value:120, name:'baidu'},
+                {value:180, name:'google'},
+                {value:120, name:'知乎'}
+            ]
+        }
+    ]
+};
+myChart.setOption(option);
+                    </script>
+                    </div>
+                    <div id="pieChart">
+                        <div id="pieCenter">
+                            <h2>正在拜读的书完成进度</h2>
+
+                            <div id="pieOne" style="width: 250px;height:250px;">
+                            </div>
+                            <script type="text/javascript">
+                                // 基于准备好的dom，初始化echarts实例
+                                var myChart = echarts.init(document.getElementById('pieOne'));
+
+                                // 指定图表的配置项和数据
+                                // app.title = '环形图';
+                                option = {
+                                    color: ['#e06568', '#ebf1f5'],
+                                    tooltip: {
+                                        show: false,
+                                        trigger: 'item',
+                                        enterable: true,
+                                        formatter: "{a} <br/>{b}: ({c}%)"
+                                    },
+                
+                                    title: {
+                                        text: '放学后',
+                                        x: 'center',
+                                        y: 'center',
+                                        textStyle: {
+                                            fontSize: 14,
+                                            color: '#e06568',
+                                            fontWeight:500
+                                        },
+                                        subtext:'90%',
+                                        subtextStyle:{
+                                            color: '#e06568'
+                                        }
+
+                                    },
+                                    series: [
+                                        {
+                                            name: '访问来源',
+                                            type: 'pie',
+                                            radius: ['60px', '70px'],
+                                            hoverAnimation: false,
+                                            avoidLabelOverlap: false,
+                                            label: {
+                                                normal: {
+                                                    show: false,
+                                                    position: 'center'
+                                                },
+                                                emphasis: {
+                                                    show: false,
+
+                                                },
+
+                                            },
+                                            labelLine: {
+                                                normal: {
+                                                    show: false
+                                                }
+                                            },
+                                            data: [
+                                                { value: 90, name: '《放学后》完成进度' },
+                                                { value: 10, name: '《放学后》未完成进度' }
+                                            ]
+                                        }
+                                    ]
+                                };
+
+                                // 使用刚指定的配置项和数据显示图表。
+                                myChart.setOption(option);
+                            </script>
+
+                            <div id="pieTwo" style="width: 250px;height:250px;"></div>
+                            <script type="text/javascript">
+                                // 基于准备好的dom，初始化echarts实例
+                                var myChart = echarts.init(document.getElementById('pieTwo'));
+
+                                // 指定图表的配置项和数据
+                                // app.title = '环形图';
+                                option = {
+                                    color: ['#ad6bae', '#ebf1f5'],
+                                    tooltip: {
+                                        show: false,
+                                        trigger: 'item',
+                                        enterable: true,
+                                        formatter: "{a} <br/>{b}: ({c}%)"
+                                    },
+                                   title: {
+                                        text: '悲惨世界',
+                                        x: 'center',
+                                        y: 'center',
+                                        textStyle: {
+                                            fontSize: 14,
+                                            color: '#ad6bae',
+                                            fontWeight:500
+                                        },
+                                        subtext:'60%',
+                                        subtextStyle:{
+                                            color: '#ad6bae'
+                                        }
+                                    },
+                                    series: [
+                                        {
+                                            name: '访问来源',
+                                            type: 'pie',
+                                            radius: ['60px', '70px'],
+                                            hoverAnimation: false,
+                                            avoidLabelOverlap: false,
+                                            label: {
+                                                normal: {
+                                                    show: false,
+                                                    position: 'center'
+                                                },
+                                                emphasis: {
+                                                    show: false,
+
+                                                }
+                                            },
+                                            labelLine: {
+                                                normal: {
+                                                    show: false
+                                                }
+                                            },
+                                            data: [
+                                                { value: 60, name: '《悲惨世界》完成进度' },
+                                                { value: 40, name: '《悲惨世界》未完成进度' }
+
+                                            ]
+                                        }
+                                    ]
+                                };
+
+                                // 使用刚指定的配置项和数据显示图表。
+                                myChart.setOption(option);
+                            </script>
+                            <div id="pieThress" style="width: 250px;height:250px;"></div>
+                            <script type="text/javascript">
+                                // 基于准备好的dom，初始化echarts实例
+                                var myChart = echarts.init(document.getElementById('pieThress'));
+
+                                // 指定图表的配置项和数据
+                                // app.title = '环形图';
+                                option = {
+                                    color: ['#62a8dc', '#ebf1f5'],
+                                    tooltip: {
+                                        show: false,
+                                        trigger: 'item',
+                                        enterable: true,
+                                        formatter: "{a} <br/>{b}: ({c}%)",
+
+                                    },
+                                    title: {
+                                        text: 'JS 高级设计',
+                                        x: 'center',
+                                        y: 'center',
+                                        textStyle: {
+                                            fontSize: 14,
+                                            color: '#62a8dc',
+                                            fontWeight:'normal'
+                                        },
+                                        subtext:'30%',
+                                        subtextStyle:{
+                                            color: '#62a8dc'
+                                        }
+                                    },
+                                    series: [
+                                        {
+                                            name: '访问来源',
+                                            type: 'pie',
+                                            radius: ['60px', '70px'],
+                                            hoverAnimation: false,
+                                            avoidLabelOverlap: false,
+                                            label: {
+                                                normal: {
+                                                    show: false,
+                                                    position: 'center'
+                                                },
+                                                emphasis: {
+                                                    show: false,
+
+                                                }
+                                            },
+                                            labelLine: {
+                                                normal: {
+                                                    show: false
+                                                }
+                                            },
+                                            data: [
+                                                { value: 30, name: '《JavaScript高级设计程序》完成进度' },
+                                                { value: 70, name: '《JavaScript高级设计程序》未完成进度' }
+                                            ]
+                                        }
+                                    ]
+                                };
+
+                                // 使用刚指定的配置项和数据显示图表。
+                                myChart.setOption(option);
+                            </script>
+                            <div id="pieFour" style="width: 250px;height:250px;"></div>
+                            <script type="text/javascript">
+                                // 基于准备好的dom，初始化echarts实例
+                                var myChart = echarts.init(document.getElementById('pieFour'));
+
+                                // 指定图表的配置项和数据
+                                // app.title = '环形图';
+                                option = {
+                                    color: ['#50c281', '#ebf1f5'],
+                                    tooltip: {
+                                        show: false,
+                                        trigger: 'item',
+                                        enterable: true,
+                                        formatter: "{a} <br/>{b}: ({c}%)"
+                                    },
+                                    title: {
+        
+                                         text: 'DOM 编程艺术',
+                                        x: 'center',
+                                        y: 'center',
+                                        textStyle: {
+                                            fontSize: 14,
+                                            color: '#50c281',
+                                            fontWeight:500
+                                        },
+                                        subtext:'90%',
+                                        subtextStyle:{
+                                            color: '#50c281'
+                                        }
+                                    },
+                                    series: [
+                                        {
+                                            name: '访问来源',
+                                            type: 'pie',
+                                            radius: ['60px', '70px'],
+                                            hoverAnimation: false,
+                                            avoidLabelOverlap: false,
+                                            label: {
+                                                normal: {
+                                                    show: false,
+                                                    position: 'center'
+                                                },
+                                                emphasis: {
+                                                    show: false,
+
+                                                }
+                                            },
+                                            labelLine: {
+                                                normal: {
+                                                    show: false
+                                                }
+                                            },
+                                            data: [
+                                                { value: 90, name: '《JavaScript DOM编程艺术》完成进度' },
+                                                { value: 10, name: '《JavaScript DOM编程艺术》未完成进度' }
+                                            ]
+                                        }
+                                    ]
+                                };
+
+                                // 使用刚指定的配置项和数据显示图表。
+                                myChart.setOption(option);
+                            </script>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="personTable">
+                    <div id="left">
+                        <table>
+                            <tr>
+                                <th colspan="2">Person Information</th>
+                            </tr>
+                            <tr>
+                                <td>姓名</td>
+                                <td>陈焕然</td>
+                            </tr>
+                            <tr>
+                                <td>爱好</td>
+                                <td>喜欢web，喜欢动漫，喜欢绘画，喜欢美好的事物</td>
+                            </tr>
+                            <tr>
+                                <td>自我评价</td>
+                                <td>与人和善，能正确的处理周边的人际关系。<br>喜欢web开发，喜欢编程，并愿意付出时间。</td>
+                            </tr>
+                            <tr>
+                                <td>关于WEB</td>
+                                <td>毫无预兆的喜欢上了web，喜欢的过程遇到了很多坑，<br>但仍然喜欢着。 觉得前端开发在用户交互中有着非常重要的角色
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>我的作品</td>
+                                <td>1.学习过程中做的一些小练习<a href="https://github.com/huanranc" target="_blank">查看</a><br> 2.暂无
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>邮箱</td>
+                                <td>huanranjoe@163.com</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="right">
+                        <h2>My skills</h2>
+                        <div class="skillTable">
+                            <h3>HTML5</h3>
+                            <div class="progress">
+                                <div class="progressNar" style="width: 51%; background:#005394;">
+                                    <span>51%</span>
+                                </div>
+                            </div>
+                            <h3>CSS3</h3>
+                            <div class="progress">
+                                <div class="progressNar" style="width: 85%; background:#d9534f;">
+                                    <span>85%</span>
+                                </div>
+                            </div>
+                            <h3>JavaScript</h3>
+                            <div class="progress">
+                                <div class="progressNar" style="width: 30%; background:#f0ad4e;">
+                                    <span>30%</span>
+                                </div>
+                            </div>
+                            <h3>JavaEE</h3>
+                            <div class="progress">
+                                <div class="progressNar" style="width: 40%; background:#9ACD32">
+                                    <span>40%</span>
+                                </div>
+                            </div>
+                            <h3>PHP</h3>
+                            <div class="progress">
+                                <div class="progressNar" style="width: 10%; background:	#DA70D6">
+                                    <span>10%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
